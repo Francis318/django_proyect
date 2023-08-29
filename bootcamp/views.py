@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.template import loader
 
 # Create your views here.
 
@@ -6,10 +7,24 @@ from django.shortcuts import render
 from django.http import HttpResponse
 #Cliente pide Request
 #Servidor Responde Respose
-def get_koder(request):
-    #Response
-    return HttpResponse("Este es el koder")
 
 def list_koder(request):
-    return HttpResponse("Esta es la lista de koders: ")
+    context={
+        "koders":[{"name": "Francisco", "generation":"1", "bootcamp": "Python","is_active":True,},
+            {"name": "Martin", "generation":"1", "bootcamp": "Python","is_active":False,}]
+    }
+    template=loader.get_template("bootcamp/templates/list_koders.html")
+    return HttpResponse(template.render(context,request))
+
+
+def get_koder(request,id):
+    #Response
+    koders = [
+        {"id": 0, "name": "Enrique", "generation": "1g", "bootcamp": "Python"},
+        {"id": 1, "name": "Luis", "generation": "1g", "bootcamp": "Python"},
+        {"id": 2, "name": "Irving", "generation": "1g", "bootcamp": "Python"},
+    ]
+
+    founded_koder = [koder for koder in koders if koder["id"] == id]
+    return HttpResponse(f"Founder koder ---> {founded_koder}")
 

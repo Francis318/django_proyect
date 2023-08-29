@@ -23,6 +23,6 @@ from .views import get_koder,list_koder
 
 #ruta=http://127.0.0.1:8000/
 urlpatterns = [
-    path("koders/id/", get_koder),
+    path("koders/<int:id>/", get_koder),
     path("koders/list/", list_koder),
 ]

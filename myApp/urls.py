@@ -19,7 +19,7 @@ from django.urls import path
 
 
 #Views
-from .views import bienvenida,despedida,saludo,saludar_con_nombre,Kodemia
+from .views import bienvenida,despedida,saludo,saludar_con_nombre,Kodemia,saludar_con_mi_nombre,practica2
 
 #ruta=http://127.0.0.1:8000/
 urlpatterns = [
@@ -29,4 +29,6 @@ urlpatterns = [
     #saludo/Kike
     path("saludo/<str:nombre>", saludar_con_nombre),
     path("kodemia/<str:type>", Kodemia),
+    path("saludar/<str:nombre>", saludar_con_mi_nombre),
+    path("practica/<str:nombre>/<str:tipe>", practica2),
 ]
