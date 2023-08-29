@@ -15,16 +15,18 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
 
 
 #Views
-#from myApp.views import bienvenida,despedida,saludo,saludar_con_nombre
+from .views import bienvenida,despedida,saludo,saludar_con_nombre,Kodemia
 
 #ruta=http://127.0.0.1:8000/
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    #incluya todas las urls de myApp
-    path("",include("myApp.urls")),
-    path("",include("bootcamp.urls")),
-    ]
+    path("despedida/", despedida),
+    path("", bienvenida),
+    path("saludo/", saludo),
+    #saludo/Kike
+    path("saludo/<str:nombre>", saludar_con_nombre),
+    path("kodemia/<str:type>", Kodemia),
+]
