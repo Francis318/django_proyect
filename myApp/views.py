@@ -42,7 +42,7 @@ def Kodemia(request, type):
 def saludar_con_mi_nombre(request, nombre):
     contex = {#"name": nombre, 
               "apellido":"Reyes"}  # va a servir para darle info al template
-    template = loader.get_template("base.html")
+    template = loader.get_template("templates/base.html")
     return HttpResponse(template.render(contex, request))
 
 

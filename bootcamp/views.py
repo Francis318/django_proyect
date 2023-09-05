@@ -13,7 +13,7 @@ def list_koder(request):
         "koders":[{"name": "Francisco", "generation":"1", "bootcamp": "Python","is_active":True,},
             {"name": "Martin", "generation":"1", "bootcamp": "Python","is_active":False,}]
     }
-    template=loader.get_template("bootcamp/templates/list_koders.html")
+    template=loader.get_template("templates/list_koders.html")
     return HttpResponse(template.render(context,request))
 
 
