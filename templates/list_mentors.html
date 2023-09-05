@@ -3,11 +3,11 @@
 
 <!--bloque del hijo-->
 
-{% block p_3 %}
+{% block content %}
 {% for koder in mentors%}
 <span> Name: {{koder.name}} </span>
 <span> Generation: {{koder.generation}} </span>
 <span> Bootcamp: {{koder.bootcamp}} </span>
 <span> Is Active: {{koder.is_active}} </span>
 {%endfor%}
-{% endblock p_3 %}
+{% endblock content %}

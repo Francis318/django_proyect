@@ -30,8 +30,23 @@ def get_koder(request,id):
 
 def list_mentors(request):
     context={
-        "mentors":[{"name": "Alfredo", "generation":"1", "bootcamp": "Python","is_active":False,},
-            {"name": "Ale", "generation":"1", "bootcamp": "Django","is_active":True,}]
+        "mentors": [
+            {
+                "name": "Benjamin",
+                "last_name": "Aguilar",
+                "is_active": True
+            },
+            {
+                "name": "Alfredo",
+                "last_name": "Altamirano",
+                "is_active": True
+            },
+            {
+                "name": "Charles",
+                "last_name": "Lopez",
+                "is_active": False
+            },
+        ]
     }
     template=loader.get_template("templates/list_mentors.html")
     return HttpResponse(template.render(context,request))
