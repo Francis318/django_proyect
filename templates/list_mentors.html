@@ -2,17 +2,12 @@
 {% extends "templates/base.html" %}
 
 <!--bloque del hijo-->
-{% block title %}
-<h2>
-    Esto es el titulo en el hijo list koders
-</h2>
-{% endblock title %}
 
-{% block content %}
-{% for koder in koders%}
+{% block p_3 %}
+{% for koder in mentors%}
 <span> Name: {{koder.name}} </span>
 <span> Generation: {{koder.generation}} </span>
 <span> Bootcamp: {{koder.bootcamp}} </span>
 <span> Is Active: {{koder.is_active}} </span>
 {%endfor%}
-{% endblock content %}
+{% endblock p_3 %}

@@ -19,10 +19,11 @@ from django.urls import path
 
 
 #Views
-from .views import get_koder,list_koder
+from .views import get_koder,list_koder,list_mentors
 
 #ruta=http://127.0.0.1:8000/
 urlpatterns = [
     path("koders/<int:id>/", get_koder),
     path("koders/list/", list_koder),
+    path("mentors/list/", list_mentors),
 ]

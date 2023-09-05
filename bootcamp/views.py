@@ -28,3 +28,10 @@ def get_koder(request,id):
     founded_koder = [koder for koder in koders if koder["id"] == id]
     return HttpResponse(f"Founder koder ---> {founded_koder}")
 
+def list_mentors(request):
+    context={
+        "mentors":[{"name": "Alfredo", "generation":"1", "bootcamp": "Python","is_active":False,},
+            {"name": "Ale", "generation":"1", "bootcamp": "Django","is_active":True,}]
+    }
+    template=loader.get_template("templates/list_mentors.html")
+    return HttpResponse(template.render(context,request))
