@@ -8,25 +8,17 @@ from django.http import HttpResponse
 #Cliente pide Request
 #Servidor Responde Respose
 
+from bootcamp.models import Koder
 def list_koder(request):
-    context={
-        "koders":[{"name": "Francisco", "generation":"1", "bootcamp": "Python","is_active":True,},
-            {"name": "Martin", "generation":"1", "bootcamp": "Python","is_active":False,}]
-    }
-    template=loader.get_template("templates/list_koders.html")
-    return HttpResponse(template.render(context,request))
+    koders=Koder.objects.all()
+    return HttpResponse(koders)
 
 
-def get_koder(request,id):
+def get_koder(request,ids):
     #Response
-    koders = [
-        {"id": 0, "name": "Enrique", "generation": "1g", "bootcamp": "Python"},
-        {"id": 1, "name": "Luis", "generation": "1g", "bootcamp": "Python"},
-        {"id": 2, "name": "Irving", "generation": "1g", "bootcamp": "Python"},
-    ]
+    koders=Koder.objects.get(pk=ids)
+    return HttpResponse(koders)
 
-    founded_koder = [koder for koder in koders if koder["id"] == id]
-    return HttpResponse(f"Founder koder ---> {founded_koder}")
 
 def list_mentors(request):
     context={
