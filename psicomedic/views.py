@@ -14,32 +14,52 @@ def list_psicologits(request):
     context={
         "psicologo":psicologo_lis
     }
+    print(context)
     template=loader.get_template("templates/list_psicologo.html")
     return HttpResponse(template.render(context, request))
 
 
 def get_psicologist(request,ids):
     #Response
-    koders=Koder.objects.get(pk=ids)
-    return HttpResponse(koders)
+    psicologo_get=Psicologo.objects.get(pk=ids)
+    context={
+        "psicologo":psicologo_get
+    }
+    template=loader.get_template("templates/get_psicologo.html")
+    return HttpResponse(template.render(context, request))
 
 def list_patients(request):
-    koders=Koder.objects.all()
-    return HttpResponse(koders)
+    paciente_list=Paciente.objects.all()
+    context={
+        "paciente":paciente_list
+    }
+    template=loader.get_template("templates/list_paciente.html")
+    return HttpResponse(template.render(context, request))
 
 def get_patients(request,ids):
     #Response
-    koders=Koder.objects.get(pk=ids)
-    return HttpResponse(koders)
+    paciente_get=Paciente.objects.get(pk=ids)
+    context={
+        "psicologo":paciente_get
+    }
+    template=loader.get_template("templates/get_paciente.html")
+    return HttpResponse(template.render(context, request))
 
 def list_appointments(request):
-    koders=Koder.objects.all()
-    return HttpResponse(koders)
+    citas_list=Citas.objects.all()
+    context={
+        "paciente":citas_list
+    }
+    template=loader.get_template("templates/list_citas.html")
+    return HttpResponse(template.render(context, request))
 
 def get_appointments(request,ids):
     #Response
-    koders=Koder.objects.get(pk=ids)
-    return HttpResponse(koders)
-
+    citas_get=Citas.objects.get(pk=ids)
+    context={
+        "psicologo":citas_get
+    }
+    template=loader.get_template("templates/get_citas.html")
+    return HttpResponse(template.render(context, request))
 
 

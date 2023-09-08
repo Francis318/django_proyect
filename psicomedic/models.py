@@ -33,7 +33,7 @@ class Citas(models.Model):
     """Generation model."""
 
     nombre = models.CharField(max_length=255)
-    fecha = models.CharField(max_length=25)
+    fecha = models.DateTimeField()
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
