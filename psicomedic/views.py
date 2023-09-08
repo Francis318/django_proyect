@@ -25,6 +25,7 @@ def get_psicologist(request,ids):
     context={
         "psicologo":psicologo_get
     }
+    print(context)
     template=loader.get_template("templates/get_psicologo.html")
     return HttpResponse(template.render(context, request))
 
@@ -40,7 +41,7 @@ def get_patients(request,ids):
     #Response
     paciente_get=Paciente.objects.get(pk=ids)
     context={
-        "psicologo":paciente_get
+        "paciente":paciente_get
     }
     template=loader.get_template("templates/get_paciente.html")
     return HttpResponse(template.render(context, request))
@@ -48,7 +49,7 @@ def get_patients(request,ids):
 def list_appointments(request):
     citas_list=Citas.objects.all()
     context={
-        "paciente":citas_list
+        "cita":citas_list
     }
     template=loader.get_template("templates/list_citas.html")
     return HttpResponse(template.render(context, request))
@@ -57,7 +58,7 @@ def get_appointments(request,ids):
     #Response
     citas_get=Citas.objects.get(pk=ids)
     context={
-        "psicologo":citas_get
+        "cita":citas_get
     }
     template=loader.get_template("templates/get_citas.html")
     return HttpResponse(template.render(context, request))

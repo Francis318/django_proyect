@@ -18,11 +18,15 @@ from django.contrib import admin
 from django.urls import path
 
 #Views
-from .views import list_psicologits, list_patients, list_appointments, get_psicologist, get_patients
+from .views import list_psicologits, list_patients, list_appointments, get_psicologist, get_patients, get_appointments
 
 #ruta=http://127.0.0.1:8000/
 urlpatterns = [
     path("psicologist/list/", list_psicologits),
     path("psicologist/<int:ids>/", get_psicologist),
     path("patients/list/", list_patients),
+    path("patients/<int:ids>/", get_patients),
+    path("appointments/list/", list_appointments),
+    path("appointments/<int:ids>/", get_appointments),
+    
 ]

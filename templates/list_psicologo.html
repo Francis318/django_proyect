@@ -3,7 +3,10 @@
 
 <!--bloque del hijo-->
 {% block content %}
-{% for Psicologist in psicologo%}
-<span> first_name: {{Psicologo.first_name}} </span>
+<h2>
+    La lista de Psicologos es:
+</h2>
+{% for Psicologo in psicologo%}
+<span> Name: {{Psicologo.first_name}} {{Psicologo.last_name}} </span>
 {%endfor%}
 {% endblock content %}

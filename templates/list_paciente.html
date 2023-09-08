@@ -1,0 +1,12 @@
+<!--Template hijo-->
+{% extends "templates/base.html" %}
+
+<!--bloque del hijo-->
+{% block content %}
+<h2>
+    La lista de Pacientes es:
+</h2>
+{% for Paciente in paciente%}
+<span> Name: {{Paciente.first_name}} {{Paciente.last_name}} </span>
+{%endfor%}
+{% endblock content %}
