@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     #Custom app
     "myApp",
     "bootcamp",
+    "psicomedic",
 ]
 
 MIDDLEWARE = [

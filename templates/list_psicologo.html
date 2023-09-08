@@ -1,0 +1,9 @@
+<!--Template hijo-->
+{% extends "templates/base.html" %}
+
+<!--bloque del hijo-->
+{% block content %}
+{% for Psicologist in Psicologo%}
+<span> first_name: {{Psicologo.first_name}} </span>
+{%endfor%}
+{% endblock content %}

@@ -15,17 +15,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
-
+from django.urls import path
 
 #Views
-#from myApp.views import bienvenida,despedida,saludo,saludar_con_nombre
+from .views import list_psicologits, list_patients, list_appointments, get_psicologist, get_patients
 
 #ruta=http://127.0.0.1:8000/
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    #incluya todas las urls de myApp
-    path("",include("myApp.urls")),
-    path("",include("bootcamp.urls")),
-    path("",include("psicomedic.urls")),
-    ]
+    path("psicologist/list/", list_psicologits),
+    path("psicologist/<int:ids>/", get_psicologist),
+    path("patients/list/", list_patients),
+]
